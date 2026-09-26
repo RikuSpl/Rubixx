@@ -1,0 +1,25 @@
+.timer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+li {
+    list-style: none;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.scramble-container {
+    display: flex;
+    justify-content: center;
+}
+
+.history-container {
+    display: flex;
+    justify-content: space-between;
+} 
