@@ -5,9 +5,7 @@ function Nav() {
     return (
         <div>
             <nav className="nav-container">
-                <li>3x3</li>
-                <li>4x4</li>
-                <li>5x5</li>
+                <li className="nav-item">3x3</li>
             </nav>
         </div>
     )
