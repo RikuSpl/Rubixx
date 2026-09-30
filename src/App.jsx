@@ -11,17 +11,33 @@ function App() {
 
   const [timer, setTimer] = useState(0)
   const [isRunning, setIsRunning] = useState(false)
-  
-      function toggleTimer(e) {
+  const [solveTimesShort, setSolveTimesShort] = useState([])
 
-          if(e.key == " ") {
-            isRunning ? setIsRunning(false) : setIsRunning(true)
-  
-            if(isRunning === false) {
-                setTimer(0)
-            }
 
-          }
+  function handleNewSolve() {
+
+    if(solveTimesShort.length >= 5) {
+      solveTimesShort.splice(0, 1)
+    }
+
+    setSolveTimesShort(solve => [...solve, {id: crypto.randomUUID(), solveTime: timer}])
+  }
+  
+  function toggleTimer(e) {
+
+      if(e.key == " ") {
+        isRunning ? setIsRunning(false) : setIsRunning(true)
+  
+        if(isRunning === false) {
+            setTimer(0)
+        } else {
+          handleNewSolve()
+          console.log(solveTimesShort)
+        }
+
+      }
+      
+          
       }
 
   return (
@@ -29,7 +45,7 @@ function App() {
       <Nav />
       <Scramble />
       <Stopwatch timer={timer} setTimer={setTimer} isRunning={isRunning} />
-      <History />
+      <History solveTimesShort={solveTimesShort} />
     </div>
   )
 }

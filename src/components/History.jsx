@@ -1,6 +1,6 @@
 import "./component-styles.css"
 
-function History() {
+function History({ solveTimesShort }) {
 
 
     return(
@@ -8,11 +8,18 @@ function History() {
 
             <ul>
                 <h3>Last 5 solves</h3>
-                <li>23.12</li>
-                <li>23.12</li>
-                <li>23.12</li>
-                <li>23.12</li>
-                <li>23.12</li>
+                {solveTimesShort.map(time => {
+                    return (
+                        <li key={time.id}>
+                            <span className="digits">
+                                {("0" + Math.floor((time.solveTime / 1000) % 60)).slice(-2)}.
+                            </span>
+                            <span className="digits mili-sec">
+                                {("0" + ((time.solveTime / 10) % 100)).slice(-2)}
+                            </span>
+                        </li>
+                    )
+                })}
             </ul>
 
             <ul>
