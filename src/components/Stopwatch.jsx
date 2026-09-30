@@ -25,7 +25,7 @@ function Stopwatch({ timer, setTimer, isRunning}){
 
 
     return (
-        <div>
+        <div className="stopwatch-container">
             <div className="timer-container">
                 <div className="timer">
                     {Math.floor((timer / 60000) % 60) == 1 ? (
