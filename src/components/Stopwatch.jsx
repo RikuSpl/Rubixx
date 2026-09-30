@@ -1,6 +1,7 @@
 
 import { useEffect } from "react"
 import "./component-styles.css"
+import Options from "./Options"
 
 function Stopwatch({ timer, setTimer, isRunning}){
 
@@ -35,6 +36,7 @@ function Stopwatch({ timer, setTimer, isRunning}){
                     </span>
                 </div>
             </div>
+            <Options timer={timer} isRunning={isRunning} />
         </div>
     )
 } 
