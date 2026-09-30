@@ -24,10 +24,12 @@ li {
 .history-container {
     display: flex;
     justify-content: space-between;
+    margin-left: 100px;
+    margin-right: 100px;
 } 
 
 .timer {
-    font-size: 5rem;
+    font-size: 7rem;
     font-family: monospace;
 }
 
@@ -36,8 +38,24 @@ li {
     justify-content: center;
     gap: 20px;
     font-size: 1.25rem;
-    min-height: 25px;
     margin-right: 40px;
+}
+
+.options-container {
+    margin-bottom: 150px;
+    min-height: 40px;
+}
+
+.options-item {
+    padding: 5px 10px;
+    border-radius: 7px;
+    
+}
+
+.options-item:hover {
+    transition: ease 0.5s;
+    background-color: rgb(26, 24, 24);
+    cursor: pointer;
 }
 
 .nav-item {

@@ -28,6 +28,12 @@ function Stopwatch({ timer, setTimer, isRunning}){
         <div>
             <div className="timer-container">
                 <div className="timer">
+                    {Math.floor((timer / 60000) % 60) == 1 ? (
+                            <span className="digits">
+                                {("" + Math.floor((timer / 60000) % 60)).slice(-2)}.
+                            </span>
+                        ) : null}
+                    
                     <span className="digits">
                         {("0" + Math.floor((timer / 1000) % 60)).slice(-2)}.
                     </span>
@@ -36,7 +42,7 @@ function Stopwatch({ timer, setTimer, isRunning}){
                     </span>
                 </div>
             </div>
-            <Options timer={timer} isRunning={isRunning} />
+            <Options timer={timer} isRunning={isRunning} setTimer={setTimer}/>
         </div>
     )
 } 
