@@ -30,7 +30,8 @@ li {
 
 .history-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    margin-bottom: 7vh;
 } 
 
 .timer {
@@ -92,4 +93,15 @@ li {
 .reset-button:hover .reset-scramble {
     transition: ease 0.5s;
     visibility: visible;
+}
+
+.last5-container {
+    min-height: 150px;
+}
+
+.ao-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
 }

@@ -12,6 +12,7 @@ function App() {
   const [timer, setTimer] = useState(0)
   const [isRunning, setIsRunning] = useState(false)
   const [solveTimesShort, setSolveTimesShort] = useState([])
+  const [solveTimes, setSolveTimes] = useState([])
 
 
   function handleNewSolve() {
@@ -21,6 +22,7 @@ function App() {
     }
 
     setSolveTimesShort(solve => [...solve, {id: crypto.randomUUID(), solveTime: timer}])
+    setSolveTimes(solve => [...solve, {id: crypto.randomUUID(), solveTime: timer}])
   }
   
   function toggleTimer(e) {
@@ -45,7 +47,7 @@ function App() {
       <Nav />
       <Scramble />
       <Stopwatch timer={timer} setTimer={setTimer} isRunning={isRunning} />
-      <History solveTimesShort={solveTimesShort} />
+      <History solveTimesShort={solveTimesShort} solveTimes={solveTimes}/>
     </div>
   )
 }
