@@ -2,17 +2,22 @@ import "./component-styles.css"
 
 function History({ solveTimesShort }) {
 
+    const reversedTimes = [...solveTimesShort].reverse()
+
 
     return(
         <div className="history-container">
 
             <ul>
                 <h3>Last 5 solves</h3>
-                {solveTimesShort.map(time => {
+                {reversedTimes.map((time, index) => {
+                  
                     return (
                         <li key={time.id}>
+                        
+                            <span>{index + 1}. </span>
                             <span className="digits">
-                                {("0" + Math.floor((time.solveTime / 1000) % 60)).slice(-2)}.
+                                 {("0" + Math.floor((time.solveTime / 1000) % 60)).slice(-2)}.
                             </span>
                             <span className="digits mili-sec">
                                 {("0" + ((time.solveTime / 10) % 100)).slice(-2)}
